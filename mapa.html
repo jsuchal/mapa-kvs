@@ -2,23 +2,13 @@
 <html>
 <head>
 	
-	<title>Mobile tutorial - Leaflet</title>
+	<title>Interaktívna mapa Karlova Ves</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
-
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
 	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
-
-
-	<style>
-		#map {
-			width: 600px;
-			height: 400px;
-		}
-	</style>
 
 	<style>body { padding: 0; margin: 0; } html, body, #map { height: 100vh; width: 100vw; }</style>
 </head>
@@ -27,7 +17,7 @@
 <div id='map'></div>
 
 <script>
-	var map = L.map('map', {minZoom: 14, zoom: 10}).fitWorld();
+	var map = L.map('map', {center: [48.159444, 17.052741], minZoom: 14, zoom: 10})
 
 	var osm = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 		maxZoom: 20,
@@ -89,8 +79,6 @@
 
 	map.locate({setView: true, maxZoom: 19});
 </script>
-
-
 
 </body>
 </html>
